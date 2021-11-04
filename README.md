@@ -5,4 +5,4 @@ Hosted Here: https://fwb67charlet.herokuapp.com/
 
 Class: Forecast
 
-Attributes: temperature (number), precipitation (boolean), precip_type (string)
+Attributes: temp (number), precipitation (boolean), precip_type (string)
