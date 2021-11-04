@@ -2,4 +2,32 @@ extends layout
 
 block content
   h1= title
-  
+
+  -
+    let results = [
+      {
+        "temp": 70,
+        "precipitation": false,
+        "precip_type": "none"
+      },
+      {
+        "temp": 66,
+        "precipitation": true,
+        "precip_type": "rain"
+      },
+      {
+        "temp": 26,
+        "precipitation": true,
+        "precip_type": "snow"
+      }
+    ]
+
+  div(class='container-fluid')
+    div(class='row')
+      each item in results 
+        div(class='col-sm-2') 
+          | Temp: #{item.temp} 
+          br
+          | Precipitation: #{item.precipitation}
+          br
+          | Precipitation Type: #{item.precip_type}
