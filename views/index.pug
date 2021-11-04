@@ -2,4 +2,16 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p #{title}
+  
+  button(type='button', class='btn btn-secondary', onClick='update()') Press Me
+
+  div(id='target') Display
+
+  script.
+    let client_count = 0;
+
+    function update(){
+      client_count += 1;
+      document.getElementById("target").innerHTML = client_count;
+    }
