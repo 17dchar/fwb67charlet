@@ -3,3 +3,21 @@ extends layout
 block content
   h1= title
   
+  p Rows: #{query.rows} | Cols: #{query.cols}
+    - let rows = Number(query.rows)
+    - let cols = Number(query.cols)
+    - if(!Number.isInteger(rows) || !Number.isInteger(cols))
+      p ERROR: Row and Collumn values must be an integer
+    - else if(rows > 6 || rows < 1 || cols > 6 || cols < 1)
+      p ERROR: Row and Collumn values must be in the range 1-6
+    - else
+        table(id='outer')
+          - for(let i=0; i<rows; i++){
+              tr(id='middle')
+              - for(let j=0; j<cols; j++){
+                  td(id='inner') #{(i+j)%rows}
+              - }
+          - }
+    
+
+
